@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Change your profile') }}</h1>
+    <h5>{{ _('Looking Good!') }}</h5>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+<h5>Beep:- if you change your username to another, next time you login, you need to login with your new username-:Beep</h5>
+{% endblock %}
+
