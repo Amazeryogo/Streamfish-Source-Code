@@ -1,0 +1,101 @@
+2020-06-25 19:27:15,119 ERROR: Exception on /user/Glittermay/popup [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 86, in user_popup
+    return render_template('user_popup.html', user=user)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 1045, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user_popup.html", line 13, in top-level template code
+    {{ _('%(count)d followers', count=user_followers.count()) }}, {{ _('%(count)d following', count=user_followed.count()) }}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 461, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user_followers' is undefined
+2020-06-25 19:40:45,251 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:40:46,750 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:41:08,211 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:42:41,426 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 22:05:15,332 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 22:29:41,930 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 22:30:40,583 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 22:31:49,350 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 08:58:09,807 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 08:58:11,231 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 08:58:44,346 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 08:58:45,799 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 08:59:02,049 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:06:18,876 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:07:59,602 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:09:18,178 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:11:25,318 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:14:16,826 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:18:02,613 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:18:28,340 ERROR: Exception on /export_posts [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 211, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "/Users/suvid/Dropbox/Streamfish Code/app/models.py", line 177, in launch_task
+    rq_job = current_app.task_queue.enqueue('app.tasks.' + name, self.id,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/rq/queue.py", line 383, in enqueue
+    return self.enqueue_call(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/rq/queue.py", line 331, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/rq/queue.py", line 439, in enqueue_job
+    pipe.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/client.py", line 4012, in execute
+    conn = self.connection_pool.get_connection('MULTI',
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to None:6379. Connection refused.
+2020-06-26 09:20:07,633 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:20:09,049 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:20:22,525 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:22:20,605 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:22:55,067 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 09:25:39,039 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 10:42:33,165 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]

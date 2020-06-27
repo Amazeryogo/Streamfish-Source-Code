@@ -1,0 +1,111 @@
+2020-06-25 12:45:01,973 ERROR: Exception on / [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 46, in index
+    return render_template('index.html', title=_('Home'), form=form,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 1045, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block 'doc'
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block 'html'
+    {%- endblock metas %}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 12, in block 'body'
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/base.html", line 47, in block 'navbar'
+    <li><a href="{{ Streamfish.html }}">{{ _('Why Streamfish?') }}</a></li>
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 461, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'Streamfish' is undefined
+2020-06-25 12:45:47,171 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 12:51:12,718 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 13:19:40,096 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 14:20:41,916 ERROR: Exception on /user/Ted Singh/popup [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 86, in user_popup
+    return render_template('user_popup.html', user=user)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 1045, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user_popup.html", line 13, in top-level template code
+    {{ _('%(count)d followers', count=user_followers.count()) }}, {{ _('%(count)d following', count=user_followed.count()) }}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 461, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user_followers' is undefined
+2020-06-25 14:20:44,267 ERROR: Exception on /user/Ted Singh/popup [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 86, in user_popup
+    return render_template('user_popup.html', user=user)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 1045, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user_popup.html", line 13, in top-level template code
+    {{ _('%(count)d followers', count=user_followers.count()) }}, {{ _('%(count)d following', count=user_followed.count()) }}
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 461, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user_followers' is undefined
+2020-06-25 17:34:51,394 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:25:41,801 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:25:45,444 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-25 19:26:07,607 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
