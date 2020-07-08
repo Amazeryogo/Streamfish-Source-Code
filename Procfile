@@ -1,1 +1,1 @@
-exec gunicorn -b :5000 --access-logfile - --error-logfile - microblog:app
+web: flask db upgrade; flask translate compile; gunicorn microblog:ap
