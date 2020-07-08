@@ -1,1 +1,1 @@
-web: gunicorn microblog:Streamfish
+web: gunicorn microblog:microblog
