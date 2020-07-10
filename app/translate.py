@@ -17,3 +17,4 @@ def translate(text, source_language, dest_language):
     if r.status_code != 200:
         return _('Error: Couldn\'t reach the server to translate')
     return json.loads(r.content.decode('utf-8-sig'))
+    

@@ -15,6 +15,7 @@ import rq
 from config import Config
 
 db = SQLAlchemy()
+# we need to change this!
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
