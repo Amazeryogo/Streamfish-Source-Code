@@ -44,7 +44,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Congratulations, you are part of Streamfish!')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title=_('Register'),
                            form=form)
@@ -63,7 +63,7 @@ def reset_password_request():
             _('Check your email for the instructions to reset your password'))
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password_request.html',
-                           title=_('Reset Password'), form=form)
+                           title=_('Reset your password'), form=form)
 
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
