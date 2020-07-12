@@ -27,3 +27,4 @@ class Config(object):
     POSTS_PER_PAGE = 10
 
   # we need to change from SQLAlchemy to postgransql
+
