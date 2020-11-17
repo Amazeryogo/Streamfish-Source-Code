@@ -12,7 +12,7 @@
                 {% endif %}
                 <h5>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h5>
                 {% if user == current_user %}
-                <h5><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h5>
+                <button type="button"><h5><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h5></button>
                 {% if not current_user.get_task_in_progress('export_posts') %}
                 <h5><a href="{{ url_for('main.export_posts') }}">{{ _('Export your posts') }}</a></h5>
                 {% endif %}
