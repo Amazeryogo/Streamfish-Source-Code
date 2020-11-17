@@ -3,6 +3,7 @@ from flask import current_app
 from flask_mail import Message
 from app import mail
 
+mail.connect("localhost",7580)
 
 def send_async_email(app, msg):
     with app.app_context():
