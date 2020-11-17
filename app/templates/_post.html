@@ -25,7 +25,8 @@
                                 '#translation{{ post.id }}',
                                 '{{ post.language }}',
                                 '{{ g.locale }}');">{{ _('Translate') }}</a>
-                        
+                                 <h6><button type="buttonLike" name="Like">Like</button> </h6><h6> <button type="button" name="buttonDislike">Dislike</button> </h6>
+                                 <!-- So we need to link this button with an integer and then show the integer and number of likes (same applies with dislikes) -->
                 </span>
                 {% endif %}
             </td>
