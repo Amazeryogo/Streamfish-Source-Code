@@ -17,7 +17,6 @@
                     username=user_link, when=moment(post.timestamp).fromNow()) }}
 
                 <br>
-                <h6><button type="buttonLike" name="Like">Like</button> </h6><h6> <button type="button" name="buttonDislike">Dislike</button> </h6>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
                 {% if post.language and post.language != g.locale %}
                 <br><br>
