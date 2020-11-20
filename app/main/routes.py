@@ -25,26 +25,31 @@ def before_request():
 @bp.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = PostForm()
-    if form.validate_on_submit():
-        language = guess_language(form.post.data)
-        if language == 'UNKNOWN' or len(language) > 5:
-            language = ''
-        post = Post(body=form.post.data, author=current_user,
-                    language=language)
-        db.session.add(post)
-        db.session.commit()
-        flash(_('Your post is now live!'))
-    page = request.args.get('page', 1, type=int)
-    posts = current_user.followed_posts().paginate(
-        page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.index', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('main.index', page=posts.prev_num) \
-        if posts.has_prev else None
-    return render_template('index.html', title=_('Home'), form=form,
-                           posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+    try:
+        form = PostForm()
+        if form.validate_on_submit():
+            language = guess_language(form.post.data)
+            if language == 'UNKNOWN' or len(language) > 5:
+                language = ''
+            post = Post(body=form.post.data, author=current_user,
+                        language=language)
+            db.session.add(post)
+            db.session.commit()
+            flash(_('Your post is now live!'))
+        page = request.args.get('page', 1, type=int)
+        posts = current_user.followed_posts().paginate(
+            page, current_app.config['POSTS_PER_PAGE'], False)
+        next_url = url_for('main.index', page=posts.next_num) \
+            if posts.has_next else None
+        prev_url = url_for('main.index', page=posts.prev_num) \
+            if posts.has_prev else None
+        return render_template('index.html', title=_('Home'), form=form,
+                            posts=posts.items, next_url=next_url,
+                            prev_url=prev_url)
+    
+    except Exception:
+        return redirect(url_for('main.index'))
+    
 
 
 @bp.route('/explore')
