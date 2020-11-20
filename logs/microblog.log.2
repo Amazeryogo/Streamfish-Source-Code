@@ -1,0 +1,109 @@
+2020-06-26 14:20:02,951 ERROR: Exception on /user/StreamFish Team [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 78, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 885, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 838, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 812, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/loaders.py", line 124, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 625, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user.html", line 57, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-06-26 14:20:38,790 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 14:20:42,138 ERROR: Exception on /user/StreamFish Team [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 78, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 885, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 838, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 812, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/loaders.py", line 124, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 625, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user.html", line 57, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-06-26 14:21:06,508 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 14:21:08,811 ERROR: Exception on /user/StreamFish Team [GET] [in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/main/routes.py", line 78, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 885, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 838, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 812, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/loaders.py", line 124, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 625, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jinja2/environment.py", line 787, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/suvid/Dropbox/Streamfish Code/app/templates/user.html", line 57, in template
+    {% end block %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'end'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-06-26 14:23:04,320 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
+2020-06-26 14:24:09,260 INFO: Welcome [in /Users/suvid/Dropbox/Streamfish Code/app/__init__.py:89]
