@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <h1> {{('Sorry! we couldn\'t find your request') }} </h1>
-    <p><a href="{{ url_for('main.index') }}">{{ _('Back') }}</a></p>
+    <h1> {{('404 ERROR') }}</h1>
+    <h1> {{('We encounted an error, please try again or contact Streamfish Team')}}</h1>
+    <img src="/static/Dino1.png" alt="{{ERROR}}">
+    <p><a href="{{ url_for('main.index') }}">{{ _('take me back') }}</a></p>
 {% endblock %}
