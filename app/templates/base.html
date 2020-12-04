@@ -36,9 +36,11 @@
                         <a href="{{ url_for('main.messages') }}">{{ _('Private Messages') }}
                             {% set new_messages = current_user.new_messages() %}
                             <span id="message_count" class="badge"
-                                  style="       visibility: {% if new_messages %}visible
+                                  style="       visibility: {% if new_messages %}visible 
                                                      {% else %}hidden{% endif %};">
                                 {{ new_messages }}
+                                {% if new_messages %}
+                                {{url_for("static", filename="lol_33.mp3")}}
                             </span>
                         </a>
                     </li>
