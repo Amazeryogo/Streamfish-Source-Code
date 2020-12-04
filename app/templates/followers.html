@@ -3,5 +3,5 @@
 {% block app_content %}
 
 {% if user.followers}
-    {% for loo in user.followers}
+    {% for loo in user.followers %}
     <h1>{{ _('%(x)s ') }}, x = loo) }}</h1>
