@@ -229,3 +229,8 @@ def notifications():
         'timestamp': n.timestamp
     } for n in notifications])
 
+
+@bp.route('/<username>/followers')
+@login_required
+def followers(username):
+    return render_template('followers.html', user=username)
