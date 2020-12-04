@@ -38,10 +38,11 @@
                             <span id="message_count" class="badge"
                                   style="       visibility: {% if new_messages %}visible 
                                                      {% else %}hidden{% endif %};">
-                                {{ new_messages }}
                                 {% if new_messages %}
                                 {{url_for("static", filename="lol_33.mp3")}}
                                 {% endif %}
+                                {{ new_messages }}
+                                
                             </span>
                         </a>
                     </li>
