@@ -240,3 +240,8 @@ def followers(username):
 def photo(username):
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('photo.html', user=user)
+
+@bp.route('/user/api/<username>')
+def api(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user_api_info.html', user=user)
