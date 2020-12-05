@@ -236,7 +236,7 @@ def followers(username):
     return render_template('followers.html', user=username)
 
 
-@bp.route('user/<username>/photo')
+@bp.route('<username>/photo')
 @login_required
 def photo(username):
     user = User.query.filter_by(username=username).first_or_404()
