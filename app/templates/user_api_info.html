@@ -1,4 +1,4 @@
-<h5>{{user.username}}</h5>
-<h5>{{ moment(user.last_seen).format('LLL') }}</h5>
-<h5>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h5>
+<h3>{{user.username}}</h3>
+<h3>{{ moment(user.last_seen).format('LLL') }}</h3>
+<h3>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h3>
 <td width="256px"><img src="{{ user.avatar(512) }}"></td>
