@@ -245,3 +245,7 @@ def photo(username):
 def api(username):
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('user_api_info.html', user=user)
+
+@bp.route('/user/api')
+def aboutx():
+    return render_template('about_api.html')
