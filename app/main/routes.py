@@ -159,7 +159,7 @@ def translate_text():
 @bp.route('/search')
 @login_required
 def search():
-    es = Elasticsearch(http_auth=('suvid', 'yoitsme'))
+    es = Elasticsearch('http://amazeryogo.in',http_auth=('suvid', 'yoitsme'))
     if not g.search_form.validate():
         return redirect(url_for('main.explore'))
     page = request.args.get('page', 1, type=int)
