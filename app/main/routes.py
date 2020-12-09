@@ -10,7 +10,7 @@ from app.main.forms import EditProfileForm, EmptyForm, PostForm, SearchForm, \
 from app.models import User, Post, Message, Notification
 from app.translate import translate
 from app.main import bp
-import Elasticsearch
+from elasticsearch1 import Elasticsearch
 
 
 @bp.before_app_request
