@@ -1,4 +1,3 @@
-Elasticsearch==1.10.0
 alembic==1.4.2
 Babel==2.8.0
 blinker==1.4
