@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Streamfish Web{% else %}{{ _('Welcome to Streamfish') }}{% endif %}
+    {% if title %}{{ title }} - Streamfish Web{% else %}{{ _('Streamfish Web') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
@@ -39,7 +39,9 @@
                                   style="       visibility: {% if new_messages %}visible 
                                                      {% else %}hidden{% endif %};">
                                 {% if new_messages %}
-                                {{url_for("static", filename = "lol_33.mp3")}}
+                                <audio>
+                                <source src="/static/lol_33.mp3">   
+                                </audio>
                                 {% endif %}
                                 {{ new_messages }}
                                 
