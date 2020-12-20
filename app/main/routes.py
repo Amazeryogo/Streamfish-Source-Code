@@ -22,7 +22,7 @@ def before_request():
 
 
 @bp.route('/', methods=['GET', 'POST'])
-@bp.route('/index', methods=['GET', 'POST'])
+@bp.route('/home', methods=['GET', 'POST'])
 @login_required
 def index():
     try:
