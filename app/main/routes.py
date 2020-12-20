@@ -161,7 +161,7 @@ def translate_text():
 def search():
     if not g.search_form.validate():
         return redirect(url_for('main.explore'))
-    page = request.args.get('page', 1, type=int,authenticated=('llll','llll'))
+    page = request.args.get('page', 1, type=int)
     posts, total = Post.search(g.search_form.q.data, page,
                                current_app.config['POSTS_PER_PAGE'])
     next_url = url_for('main.search', q=g.search_form.q.data, page=page + 1) \
