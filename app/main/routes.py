@@ -27,6 +27,7 @@ def before_request():
 def index():
     try:
         flash(_('From January 2021, you can only see the posts of the people you follow and vice versa'))
+        flash(_('MERRY CHRISTMAS!'))
         form = PostForm()
         if form.validate_on_submit():
             language = guess_language(form.post.data)

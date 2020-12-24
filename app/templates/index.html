@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>{{ _('Hey %(username)s, what is your plan for christmas?', username = current_user.username) }}</h1>
+<h1>{{ _('Hey %(username)s, merry christmas!', username = current_user.username) }}</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
