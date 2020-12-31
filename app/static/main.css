@@ -4,7 +4,7 @@ body {
 }
 
 .dark-mode {
-    background-color: black;
+    background-color: grey;
     color: white;
     transition: all 1s;
 }
