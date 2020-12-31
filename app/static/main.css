@@ -4,7 +4,7 @@ body {
 }
 
 .dark-mode {
-    background-color: rgb(43, 41, 41);
+    background-color: rgb(27, 26, 26);
     color: black;
     transition: all 1s;
 }
