@@ -5,6 +5,6 @@ body {
 
 .dark-mode {
     background-color: rgb(43, 41, 41);
-    color: white;
+    color: black;
     transition: all 1s;
 }
