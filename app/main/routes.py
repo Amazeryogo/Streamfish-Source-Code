@@ -251,3 +251,7 @@ def api(username):
 @bp.route('/user/api')
 def aboutx():
     return render_template('about_api.html')
+
+@bp.route('/discord')
+def discord():
+    return redirect("https://discord.gg/3eYmSAx3Uh")
