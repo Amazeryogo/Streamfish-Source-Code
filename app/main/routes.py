@@ -256,4 +256,4 @@ def aboutx():
 
 @bp.route('/discord')
 def discord():
-    return redirect("https://discord.gg/3eYmSAx3Uh")
+    return redirect("https://discord.gg/44RzAtCaVh")
