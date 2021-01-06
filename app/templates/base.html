@@ -179,4 +179,30 @@
         });
         {% endif %}
     </script>
+    Copy and paste these scripts into the bottom of your <body> tag, but before you use any Firebase services:
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBGdE4-mMwLO1cJrZuDew1ngZLT7nrW5ZM",
+    authDomain: "streamfish-44c3e.firebaseapp.com",
+    projectId: "streamfish-44c3e",
+    storageBucket: "streamfish-44c3e.appspot.com",
+    messagingSenderId: "257669087961",
+    appId: "1:257669087961:web:916adf70f72f4877a3f4c8",
+    measurementId: "G-252KYEGW0C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 {% endblock %}
