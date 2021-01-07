@@ -3,7 +3,7 @@
 
 {% block app_content %}
 <link href="static/main.css" rel="stylesheet">
-<h1>{{ _('Hey %(username)s, merry christmas and a happy new year!', username = current_user.username) }}</h1>
+<h1>{{ _('Hey %(username)s, What are your plans?', username = current_user.username) }}</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
