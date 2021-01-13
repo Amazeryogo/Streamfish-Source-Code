@@ -1,12 +1,11 @@
 body{
- background-color: white;
- color: black;
+  background-color: #212121;
+  color: #3B3B3B    ;
  transition: all 0.5s;
 }
 
 /* code to be toggled on button press */
 
-.dark_mode{
-  background-color: #212121;
-  color: #3B3B3B    ;
-}
+/*.dark_mode{
+
+}*/
