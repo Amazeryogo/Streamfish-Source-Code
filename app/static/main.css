@@ -1,6 +1,6 @@
-.body{
-  background-color: #212121;
-  color: #3B3B3B    ;
+body{
+  background-color: black;
+  color: lightblue;
  transition: all 0.5s;
 }
 
