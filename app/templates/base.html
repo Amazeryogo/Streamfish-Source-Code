@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block navbar %}
-    <link href="static/main.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
     <nav class="navbar nav  bar-default">
         <div class="container">
             <div class="navbar-header">
