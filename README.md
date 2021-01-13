@@ -5,6 +5,5 @@ Streamfish is a social media/messaging website which is made from python flask-f
 You can try it out on 
 
 https://streamfish.herokuapp.com/
-
-it is going through a DB change, please wait.
-(this does not affect the local version)
+or on 
+http://www.amazeryogo.in
