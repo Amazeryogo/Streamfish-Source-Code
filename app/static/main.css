@@ -1,7 +1,6 @@
 body{
   background-color: black;
   color: lightblue;
- transition: all 0.5s;
 }
 
 /* code to be toggled on button press */
