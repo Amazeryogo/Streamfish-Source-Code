@@ -1,11 +1,12 @@
-body {
-    background: black;
-    color: rgb(10, 245, 245);
+.body{
+ background-color: white;
+ color: black;
+ transition: all 0.5s;
 }
 
-/*.dark-mode {
-    background-color:#212121;
-    color:#3B3B3B;
-    transition: all 1s;
-    
-}*/
+/* code to be toggled on button press */
+
+.dark_mode{
+  background-color: #212121;
+  color: #3B3B3B    ;
+}

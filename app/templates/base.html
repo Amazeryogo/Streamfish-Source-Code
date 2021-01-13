@@ -21,8 +21,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
                     <li><a href="{{ url_for('main.explore') }}">{{ _('Live Chat') }}</a></li>
-                    <!--<script type=text/javascript src="{{url_for('static', filename='main.js') }}"></script>
-                    <button onClick="darkMode()"> Dark Mode </button>-->
+                    <script type=text/javascript src="{{url_for('static', filename='main.js') }}"></script>
+                    <button onClick="darkMode()"> Dark Mode </button>
                 </ul>
                 {% if g.search_form %}
                 <form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
