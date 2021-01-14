@@ -2,7 +2,7 @@
 
 {% block app_content %}
 <body>
-    <link href="static/main.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
     <table class="table table-hover">
         <tr>
             <td width="256px"><img src="{{ user.avatar(256) }}"></td>

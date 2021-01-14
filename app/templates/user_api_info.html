@@ -1,4 +1,5 @@
 <h3>{{user.username}}</h3>
+<link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
 <h3>{{ moment(user.last_seen).format('LLL') }}</h3>
 <h3>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h3>
 <td width="256px"><img src="{{ user.avatar(512) }}"></td>

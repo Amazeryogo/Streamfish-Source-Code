@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<link href="static/main.css" rel="stylesheet">
+<link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
 <tr>
     <td width="64" style="border: 0px;"><img src="{{ user.avatar(512) }}"></td>
 </tr>
