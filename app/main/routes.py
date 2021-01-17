@@ -94,13 +94,13 @@ def user_popup(username):
 @login_required
 def edit_profile():
     flash(_('Beep:- if you change your username to another, next time you login, you need to login with your new username-:Beep'))
-    flash(_('Looking Good!!'))
     form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
         flash(_('Your changes have been saved.'))
+        flash(_('Looking Good!!'))
         return redirect(url_for('main.edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
