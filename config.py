@@ -24,7 +24,7 @@ class Config(object):
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
-    POSTS_PER_PAGE = 10
+    POSTS_PER_PAGE = 100
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
 
   # we need to change from SQLAlchemy to postgransql
