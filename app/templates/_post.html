@@ -14,21 +14,11 @@
                         </a>
                     </span>
                 {% endset %}
-                {{ _('%(username)s said %(when)s',
-                    username=user_link, when=moment(post.timestamp).fromNow()) }}
-
+                {{ _('%(username)s',
+                    username=user_link) }}
+                {{ _('%(when)s', when=moment(post.timestamp).fromNow()) }}
                 <br>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
-                {% if post.language and post.language != g.locale %}
-                <br><br>
-                <span id="translation{{ post.id }}">
-                    <a href="javascript:translate(
-                                '#post{{ post.id }}',
-                                '#translation{{ post.id }}',
-                                '{{ post.language }}',
-                                '{{ g.locale }}');">{{ _('Translate') }}
-                                 <!-- So we need to link this button with an integer and then show the integer and number of likes (same applies with dislikes) -->
-                </span>
                 {% endif %}
             </td>
         </tr>

@@ -1,0 +1,105 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="aria" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="p" />
+            <item index="7" class="java.lang.String" itemvalue="form" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyArgumentListInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W292" />
+          <option value="W391" />
+          <option value="E265" />
+          <option value="E261" />
+          <option value="E302" />
+          <option value="E203" />
+          <option value="E115" />
+          <option value="E114" />
+          <option value="E116" />
+          <option value="E301" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+          <option value="N802" />
+          <option value="N806" />
+          <option value="N803" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="type" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="TicTacToe.Ipython" />
+          <option value="TicTacToe.player1" />
+          <option value="TicTacToe.player2" />
+          <option value="list.*" />
+          <option value="TicTacToe.player_choice" />
+          <option value="TicTacToe.No" />
+          <option value="TicTacToe.player1_marker" />
+          <option value="TicTacToe.win_check" />
+          <option value="TicTacToe.display_board" />
+          <option value="TicTacToe.full_board_check" />
+          <option value="TicTacToe.player2_marker" />
+          <option value="TicTacToe.place_marker" />
+          <option value="TicTacToe.chooseturn_first" />
+          <option value="whoknows.chooseturn_first" />
+          <option value="whoknows.display_board" />
+          <option value="whoknows.full_board_check" />
+          <option value="whoknows.win_check" />
+          <option value="TicTacToe.game_on" />
+          <option value="TurnTurnTurn.np" />
+          <option value="Hola.divide" />
+          <option value="Hola.add" />
+          <option value="str.__truediv__" />
+          <option value="Hola.subtract" />
+          <option value="str.__sub__" />
+          <option value="Hola.multiply" />
+          <option value="mainflint.weapons" />
+          <option value="mainflint.village" />
+          <option value="SourceCodeOfTheCommandline.Hello" />
+          <option value="db.Hello" />
+          <option value="app.config.SQLALCHEMY_DATABASE_URI" />
+          <option value="str.Column" />
+          <option value="str.String" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
