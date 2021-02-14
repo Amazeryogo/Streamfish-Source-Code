@@ -2,6 +2,7 @@
 
 {% block app_content %}
 
-{% if user.followers}
+{% if user.followers %}
     {% for loo in user.followers %}
     <h1>{{ _('%(x)s ') }}, x = loo) }}</h1>
+{% endif %}
