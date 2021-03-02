@@ -8,3 +8,5 @@ You can try it out on
 https://streamfish.herokuapp.com/
 or on 
 http://www.amazeryogo.in
+
+## To see the upcoming changes this summer, see (the markdown file)[https://github.com/Amazeryogo/Streamfish-Source-Code/blob/master/SUMMERCHANGES2021.md]
