@@ -1,4 +1,4 @@
-## These are the changes done to Streamfish during summer*
+## These are the changes to be done Streamfish during summer*
 
 
 ### A new type of post with a limit of 1000 words and has a title (basically a blog)
