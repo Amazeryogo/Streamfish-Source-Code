@@ -264,7 +264,7 @@ class Message(db.Model):
         return '<Message {}>'.format(self.body)
 
 class LP(db.Model):
-        __searchable__ = ['title']
+    __searchable__ = ['title']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200))
     body = db.Column(db.String(5000))
