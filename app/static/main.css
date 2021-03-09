@@ -5,7 +5,7 @@ body{
 
 /* code to be toggled on button press */
 
-.dark_mode{
+.dark-mode{
   background-color: rgb(32, 34, 34);
   color: gold;
 
