@@ -149,7 +149,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
         return followed.union(own).order_by(Post.timestamp.desc())
 
     def get_reset_password_token(self, expires_in=600):
-        return jwt.encode(
+        return jwt.encode.decode(
             {'reset_password': self.id, 'exp': time() + expires_in},
             current_app.config['SECRET_KEY'],
             algorithm='HS256').decode('utf-8')
@@ -270,7 +270,7 @@ class LP(db.Model):
     body = db.Column(db.String(5000))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    
+
     def __repr__(self):
         return '<LP {}>'.format(self.title)
 class Notification(db.Model):
