@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Streamfish Web{% else %}{{ _('Streamfish Web') }}{% endif %}
+    {% if title %}{{ title }} - Streamfish{% else %}{{ _('Streamfish') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
@@ -15,7 +15,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Streamfish Web</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">Streamfish</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -33,7 +33,7 @@
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('auth.login') }}">{{ _('Streamfish Web') }}</a></li>
+                    <li><a href="{{ url_for('auth.login') }}">{{ _('Streamfish') }}</a></li>
                     {% else %}
                     <li>
                         <a href="{{ url_for('main.messages') }}">{{ _('Private Messages') }}
