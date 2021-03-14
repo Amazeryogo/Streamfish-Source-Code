@@ -252,6 +252,6 @@ def aboutx():
 def discord():
     return redirect("https://discord.gg/44RzAtCaVh")
 
-@bp.route('/discord-nitro')
+@bp.route('/beta-testing')
 def nitro():
     return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
