@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <h1> {{('404 ERROR') }}</h1>
-    <h1> {{('We encounted an error, please try again or contact Streamfish Team')}}</h1>
+    <h1> {{('404 त्रुटि') }}</h1>
+    <h1> {{('हमने एक त्रुटि का सामना किया, कृपया फिर से प्रयास करें या स्ट्रीमफ़िश टीम से संपर्क करें')}}</h1>
     <img src="../static/dino.png" alt="{{ERROR}}">
-    <p><a href="{{ url_for('main.index') }}">{{ _('take me back') }}</a></p>
+    <p><a href="{{ url_for('main.index') }}">{{ _('मुझे वापस ले') }}</a></p>
 {% endblock %}

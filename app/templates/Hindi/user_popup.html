@@ -7,7 +7,7 @@
             <h5>
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}
-                <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('lll') }}</p>
+                <p>{{ _('Last seen on`') }}: {{ moment(user.last_seen).format('lll') }}</p>
                 {% endif %}
                 <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
             </h5>

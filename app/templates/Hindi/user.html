@@ -14,7 +14,7 @@
                 {% endif %}
                 <h5>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h5>
                 {% if user == current_user %}
-                <button type="button"><h5><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h5></button>
+                <button type="button"><h5><a href="{{ url_for('main.edit_profile') }}">{{ _('अपनी प्रोफाइल सम्पादित करें') }}</a></h5></button>
                 {% if not current_user.get_task_in_progress('export_posts') %}
                 <h5></h5>
                 {% endif %}
@@ -32,7 +32,7 @@
                     </form>
                 {% endif %}
                 {% if user != current_user %}
-                <p><a href="{{ url_for('main.send_message', recipient=user.username) }}">{{ _('Send private message') }}</a></p>
+                <p><a href="{{ url_for('main.send_message', recipient=user.username) }}">{{ _('निजी संदेश भेजें') }}</a></p>
                 {% endif %}
             </td>
         </tr>
@@ -44,12 +44,12 @@
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                    <span aria-hidden="true">&larr;</span> {{ _('नए पोस्टस') }}
                 </a>
             </li>
             <li class="next{% if not next_url %} disabled{% endif %}">
                 <a href="{{ next_url or '#' }}">
-                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                    {{ _('पुराने पोस्ट') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>

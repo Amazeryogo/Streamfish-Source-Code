@@ -1,7 +1,7 @@
-Dear {{ user.username }},
+प्रिय {{user.username}},
 
-Please find attached the archive of your posts that you requested.
+कृपया अपने पोस्ट के संग्रह को संलग्न करें जो आपने अनुरोध किया था।
 
-Sincerely,
+साभार,
 
-Streamfish Team
+स्ट्रीमफिश टीम

@@ -43,3 +43,43 @@ class ResetPasswordForm(FlaskForm):
         _l('Repeat Password'), validators=[DataRequired(),
                                            EqualTo('password')])
     submit = SubmitField(_l('Change my password'))
+
+
+class LoginFormHindi(FlaskForm):
+    username = StringField(_l('मेरा उपयोगकर्ता नाम'), validators=[DataRequired()])
+    password = PasswordField(_l('मेरा पासवर्ड'), validators=[DataRequired()])
+    remember_me = BooleanField(_l('कृपया मुझे याद रखिए!'))
+    submit = SubmitField(_l('चलो चलते हैं!'))
+
+
+class RegistrationFormHindi(FlaskForm):
+    username = StringField(_l('मेरा नया उपयोगकर्ता नाम'), validators=[DataRequired()])
+    email = StringField(_l('मेरी ई - मेल'), validators=[DataRequired(), Email()])
+    password = PasswordField(_l('मेरा नया पासवर्ड'), validators=[DataRequired()])
+    password2 = PasswordField(
+        _l('मेरा नया पासवर्ड दोहराएँ'), validators=[DataRequired(),
+                                           EqualTo('password')])
+    submit = SubmitField(_l('चलो चलते हैं!!'))
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError(_('हम्म्म! एक अलग उपयोगकर्ता नाम का प्रयास करें।'))
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError(_('हम्म्म! एक अलग ईमेल पता आज़माएं'))
+
+
+class ResetPasswordRequestFormHindi(FlaskForm):
+    email = StringField(_l('ईमेल'), validators=[DataRequired(), Email()])
+    submit = SubmitField(_l('कृपया इसे रीसेट करें'))
+
+
+class ResetPasswordFormHindi(FlaskForm):
+    password = PasswordField(_l('पासवर्ड'), validators=[DataRequired()])
+    password2 = PasswordField(
+        _l('पासवर्ड दोहराएं'), validators=[DataRequired(),
+                                           EqualTo('password')])
+    submit = SubmitField(_l('मेरा पासवर्ड बदलो'))
