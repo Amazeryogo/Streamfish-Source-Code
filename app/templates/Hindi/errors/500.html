@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>{{ _('500 ERROR') }}</h1>
+    <p>{{ _('Oops something went wrong occurred and thats all we know') }}</p> 
+    <p><a href="{{ url_for('main.index') }}">{{ _('take me back') }}</a></p>
+{% endblock %}
