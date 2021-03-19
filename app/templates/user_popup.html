@@ -5,7 +5,7 @@
         <td style="border: 0px;">
             <p><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}</a></p>
             <h5>
-                {% if user.verified == True}<p><b>Verified User</b></p>{% endif %}
+                {% if user.verified == True %}<p><b>Verified User</b></p>{% endif %}
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}
                 <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('lll') }}</p>
