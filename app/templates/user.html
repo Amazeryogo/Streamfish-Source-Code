@@ -12,6 +12,9 @@
                 {% if user.last_seen %}
                 <h5>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</h5>
                 {% endif %}
+                {% if verified == True %} 
+                <h3>Verified User ✔️</h3>
+                {% endif %}
                 <h5>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h5>
                 {% if user == current_user %}
                 <button type="button"><h5><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h5></button>
