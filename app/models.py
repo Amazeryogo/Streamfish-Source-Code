@@ -100,7 +100,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
     token = db.Column(db.String(32), index=True, unique=True)
     verified = db.Column(db.Boolean)
     darkmode= db.Column(db.Boolean)
-    staff = db.Column(db.Boolean)
+    Staff = db.Column(db.Boolean)
     token_expiration = db.Column(db.DateTime)
     followed = db.relationship(
         'User', secondary=followers,
