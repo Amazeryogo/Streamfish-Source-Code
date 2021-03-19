@@ -77,7 +77,7 @@ def user(username):
                        page=posts.prev_num) if posts.has_prev else None
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts.items,
-                           next_url=next_url, prev_url=prev_url, form=form,verified=verified)
+                           next_url=next_url, prev_url=prev_url, form=form,verified=verified,dm=current_user.darkmode)
 
 
 @bp.route('/user/<username>/popup')
@@ -105,7 +105,7 @@ def edit_profile():
         form.about_me.data = current_user.about_me
         form.about_me.data = current_user.darkmode
     return render_template('edit_profile.html', title=_('Edit Profile'),
-                           form=form)
+                           form=form,dm=current_user.darkmode)
 
 
 @bp.route('/follow/<username>', methods=['POST'])
@@ -204,7 +204,7 @@ def messages():
     prev_url = url_for('main.messages', page=messages.prev_num) \
         if messages.has_prev else None
     return render_template('messages.html', messages=messages.items,
-                           next_url=next_url, prev_url=prev_url)
+                           next_url=next_url, prev_url=prev_url,dm=current_user.darkmode)
 
 
 @bp.route('/export_posts')

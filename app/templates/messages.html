@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block app_content %}
+{% if dm == True %}
+    <link href="{{url_for('static', filename='darkmode.css') }}" rel="stylesheet">
+{% else %}
     <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
+{% endif %}
     <h1>{{ _('Messages') }}</h1>
     {% for post in messages %}
         {% include '_post.html' %}

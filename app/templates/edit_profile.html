@@ -2,7 +2,11 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+{% if dm == True %}
+    <link href="{{url_for('static', filename='darkmode.css') }}" rel="stylesheet">
+{% else %}
     <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
+{% endif %}
     <h1>{{ _('Change your profile') }}</h1>
     <div class="row">
         <div class="col-md-4">
