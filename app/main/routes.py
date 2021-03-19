@@ -60,7 +60,7 @@ def explore():
         if posts.has_prev else None
     return render_template('index.html', title=_('Explore'),
                            posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+                           prev_url=prev_url,dm=current_user.darkmode)
 
 
 @bp.route('/user/<username>')
