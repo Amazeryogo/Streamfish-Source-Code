@@ -103,7 +103,7 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-        form.about_me.data = current_user.darkmode
+        form.darkmode.data = current_user.darkmode
     return render_template('edit_profile.html', title=_('Edit Profile'),
                            form=form,dm=current_user.darkmode)
 
