@@ -10,7 +10,7 @@ class EditProfileForm(FlaskForm):
     username = StringField(_l('Username'), validators=[DataRequired()])
     about_me = TextAreaField(_l('About me'),
                              validators=[Length(min=0, max=140)])
-    darkmode = TextAreaField(_l('Dark Mode?'))
+    darkmode = BooleanField(_l('Dark Mode?'))
     submit = SubmitField(_l('Submit'))
 
     def __init__(self, original_username, *args, **kwargs):
