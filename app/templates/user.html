@@ -26,7 +26,7 @@
                 <h3>Verified User ✔️</h3>
                 {% endif %}
                 {% if staff == True %}
-                    <h3>Staff ✔</h3>
+                    <h3>Staff ✔️</h3>
                 {% endif %}
                 <h5>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</h5>
                 {% if user == current_user %}
