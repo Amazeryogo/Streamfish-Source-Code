@@ -7,12 +7,14 @@
     {% else %}
         <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
     {% endif %}
+    <body>
     <h1> {{ _('Send a private message to  %(recipient)s', recipient=recipient) }} </h1>
     <div class="row">
         <div class="col-md-4">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
+    </body>
 {% endblock %}
 
 <p>{{ _('You can always follow up on the messages tab on the top left')}}</p>
