@@ -12,6 +12,7 @@ class EditProfileForm(FlaskForm):
     about_me = TextAreaField(_l('About me'),
                              validators=[Length(min=0, max=140)])
     darkmode = BooleanField(_l('Dark Mode?'))
+    hindi = BooleanField(_l('Hindi? (Beta)'))
     submit = SubmitField(_l('Submit'))
 
     def __init__(self, original_username, *args, **kwargs):
@@ -56,6 +57,7 @@ class EditProfileFormHINDI(FlaskForm):
     about_me = TextAreaField(_l('मेरे बारे मेँ'),
                              validators=[Length(min=0, max=140)])
     darkmode = BooleanField(_l('डार्क मोड?'))
+    hindi = BooleanField(_l('हिंदी (बीटा)')
     submit = SubmitField(_l('प्रस्तुत'))
 
     def __init__(self, original_username, *args, **kwargs):
