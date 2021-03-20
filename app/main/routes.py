@@ -112,23 +112,27 @@ def user_popup(username):
 @bp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    flash(_('Beep:- if you change your username to another, next time you login, you need to login with your new username-:Beep'))
     form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         current_user.darkmode = form.darkmode.data
         db.session.commit()
-        flash(_('Your changes have been saved.'))
-        flash(_('Looking Good!!'))
+        if user.hindi != True:
+            flash(_('Your changes have been saved.'))
+        else:
+            flash(_('आपका बदलाव सहेज लिया गया है।'))
         return redirect(url_for('main.edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
         form.darkmode.data = current_user.darkmode
-    return render_template('edit_profile.html', title=_('Edit Profile'),
-                           form=form,dm=current_user.darkmode)
-
+    if current_user.hindi != True:
+        return render_template('edit_profile.html', title=_('Edit Profile'),
+                            form=form,dm=current_user.darkmode)
+    else:
+        return render_template('Hindi/edit_profile.html', title=_('Edit Profile'),
+                            form=form,dm=current_user.darkmode)
 
 @bp.route('/follow/<username>', methods=['POST'])
 @login_required
@@ -144,7 +148,10 @@ def follow(username):
             return redirect(url_for('main.user', username=username))
         current_user.follow(user)
         db.session.commit()
-        flash(_('You are now following %(username)s!', username=username))
+        if current_user.hindi != True:
+            flash(_('You are now following %(username)s!', username=username))
+        else:
+            flash(_('अब आप अनुसरण कर रहे हैं %(username)s!', username=username))
         return redirect(url_for('main.user', username=username))
     else:
         return redirect(url_for('main.index'))
@@ -164,7 +171,10 @@ def unfollow(username):
             return redirect(url_for('main.user', username=username))
         current_user.unfollow(user)
         db.session.commit()
-        flash(_('You unfollowed %(username)s.', username=username))
+        if current_user.hindi != True:
+            flash(_('You Unfollowed: %(username)s.', username=username))
+        else:
+            flash(_('आपने इस व्यक्ति को अनफॉलो कर दिया: %(username)s.', username=username))
         return redirect(url_for('main.user', username=username))
     else:
         return redirect(url_for('main.index'))
@@ -198,7 +208,10 @@ def search():
 @login_required
 def send_message(recipient):
     user = User.query.filter_by(username=recipient).first_or_404()
-    form = MessageForm()
+    if current_user.hindi != True:
+        form = MessageForm()
+    else:
+        form = MessageFormHINDI()
     if form.validate_on_submit():
         msg = Message(author=current_user, recipient=user,
                       body=form.message.data)
@@ -207,7 +220,11 @@ def send_message(recipient):
         db.session.commit()
         flash(_('Your message has been sent.'))
         return redirect(url_for('main.user', username=recipient))
-    return render_template('send_message.html', title=_('Send Message'),
+    if current_user.hindi != True:
+        return render_template('send_message.html', title=_('Send Message'),
+                           form=form, recipient=recipient)
+    else:
+        return render_template('Hindi/send_message.html', title=_('Send Message'),
                            form=form, recipient=recipient)
 
 
@@ -225,7 +242,11 @@ def messages():
         if messages.has_next else None
     prev_url = url_for('main.messages', page=messages.prev_num) \
         if messages.has_prev else None
-    return render_template('messages.html', messages=messages.items,
+    if current_user.hindi != True:
+        return render_template('messages.html', messages=messages.items,
+                           next_url=next_url, prev_url=prev_url,dm=current_user.darkmode)
+    else:
+        return render_template('messages.html', messages=messages.items,
                            next_url=next_url, prev_url=prev_url,dm=current_user.darkmode)
 
 
