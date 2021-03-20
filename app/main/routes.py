@@ -93,7 +93,7 @@ def user(username):
         return render_template('user.html', user=user, posts=posts.items,
                             next_url=next_url, prev_url=prev_url, form=form,verified=verified,staff=staff,dm=current_user.darkmode)
     else:
-        return render_template('Hindi/user.hml',user=user, posts=posts.items,
+        return render_template('Hindi/user.html',user=user, posts=posts.items,
                             next_url=next_url, prev_url=prev_url, form=form,verified=verified,staff=staff,dm=current_user.darkmode)
 
 
