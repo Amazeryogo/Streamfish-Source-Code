@@ -13,9 +13,9 @@ from elasticsearch import Elasticsearch
 from redis import Redis
 import rq
 from config import Config
+from flask_googletrans import translator
 
 db = SQLAlchemy()
-# we need to change this!
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
@@ -29,7 +29,7 @@ babel = Babel()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
-
+    ts = translator(app)
     db.init_app(app)
     migrate.init_app(app, db)
     login.init_app(app)

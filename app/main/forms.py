@@ -46,6 +46,50 @@ class SearchForm(FlaskForm):
 
 
 class MessageForm(FlaskForm):
-    message = TextAreaField(_l('Message'), validators=[
+    message = TextAreaField(_l('संदेश'), validators=[
         DataRequired(), Length(min=1, max=10000000)])
-    submit = SubmitField(_l('Send It'))
+    submit = SubmitField(_l('इसे भेजें'))
+
+
+class EditProfileFormHINDI(FlaskForm):
+    username = StringField(_l('उपयोगकर्ता नाम'), validators=[DataRequired()])
+    about_me = TextAreaField(_l('मेरे बारे मेँ'),
+                             validators=[Length(min=0, max=140)])
+    darkmode = BooleanField(_l('डार्क मोड?'))
+    submit = SubmitField(_l('प्रस्तुत'))
+
+    def __init__(self, original_username, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+
+    def validate_username(self, username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=self.username.data).first()
+            if user is not None:
+                raise ValidationError(_('कृपया एक अलग उपयोगकर्ता नाम का उपयोग करें।'))
+
+
+class EmptyFormHINDI(FlaskForm):
+    submit = SubmitField('प्रस्तुत')
+
+
+class PostFormHINDI(FlaskForm):
+    post = TextAreaField(_l('बोलो भी'), validators=[DataRequired()])
+    submit = SubmitField(_l('इसे पोस्ट करें'))
+
+
+class SearchFormHINDI(FlaskForm):
+    q = StringField(_l('जाँच'), validators=[DataRequired()])
+
+    def __init__(self, *args, **kwargs):
+        if 'formdata' not in kwargs:
+            kwargs['formdata'] = request.args
+        if 'csrf_enabled' not in kwargs:
+            kwargs['csrf_enabled'] = False
+        super(SearchForm, self).__init__(*args, **kwargs)
+
+
+class MessageFormHINDI(FlaskForm):
+    message = TextAreaField(_l('संदेश'), validators=[
+        DataRequired(), Length(min=1, max=10000000)])
+    submit = SubmitField(_l('भेज देना'))

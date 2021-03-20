@@ -41,3 +41,4 @@ WTForms==2.3.3
 email-validator==1.1.2
 firebase==3.0.1
 gunicorn==20.0.4
+Flask-Googletrans==0.11
