@@ -122,7 +122,7 @@ def edit_profile():
         current_user.darkmode = form.darkmode.data
         current_user.hindi = form.hindi.data
         db.session.commit()
-        if user.hindi != True:
+        if current_user.hindi != True:
             flash(_('Your changes have been saved.'))
         else:
             flash(_('आपका बदलाव सहेज लिया गया है।'))
