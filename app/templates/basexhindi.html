@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Streamfish{% else %}{{ _('Streamfish') }}{% endif %}
+    {% if title %}{{ title }} - {% else %}{{ _('स्ट्रीमफिश') }}{% endif %}
 {% endblock %}
 {% block navbar %}
     <nav class="navbar nav  bar-default">
@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Streamfish</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">स्ट्रीमफिश</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -45,9 +45,9 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
-                    <li><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
-                    <li><a href="{{ url_for('main.discord') }}">{{ _('Discord!') }}</a></li>
+                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('प्रोफ़ाइल') }}</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">{{ _('लॉग आउट') }}</a></li>
+                    <li><a href="{{ url_for('main.discord') }}">{{ _('Discord') }}</a></li>
                     {% endif %}
                 </ul>
             </div>
