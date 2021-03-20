@@ -10,6 +10,7 @@ from app.models import User
 from app.auth.email import send_password_reset_email
 
 
+
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
