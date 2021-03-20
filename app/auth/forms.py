@@ -19,6 +19,8 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         _l('Repeat my new Password'), validators=[DataRequired(),
                                            EqualTo('password')])
+    darkmode = BooleanField(_l('Dark Mode?'))
+    hindi = BooleanField(_l('Use Hindi Instead of English? (while Logged in)'))
     submit = SubmitField(_l('Lets Go!!'))
 
     def validate_username(self, username):
