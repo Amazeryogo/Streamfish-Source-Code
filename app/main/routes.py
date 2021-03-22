@@ -306,3 +306,12 @@ def discord():
 @bp.route('/beta-testing')
 def nitro():
     return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+@bp.route('/404')
+def try404():
+    return render_template('errors/404.html')
+
+@bp.route('/500')
+def try500():
+    return render_template('errors/404.html')
+    
