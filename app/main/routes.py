@@ -313,5 +313,4 @@ def try404():
 
 @bp.route('/500')
 def try500():
-    return render_template('errors/404.html')
-    
+    return render_template('errors/500.html')
