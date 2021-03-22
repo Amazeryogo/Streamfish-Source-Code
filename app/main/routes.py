@@ -121,6 +121,7 @@ def edit_profile():
         current_user.about_me = form.about_me.data
         current_user.darkmode = form.darkmode.data
         current_user.hindi = form.hindi.data
+        current_user.email = form.email.data
         db.session.commit()
         if current_user.hindi != True:
             flash(_('Your changes have been saved.'))
@@ -132,6 +133,7 @@ def edit_profile():
         form.about_me.data = current_user.about_me
         form.darkmode.data = current_user.darkmode
         form.hindi.data = current_user.hindi
+        form.email.data = current_user.email
     if current_user.hindi != True:
         return render_template('edit_profile.html', title=_('Edit Profile'),
                             form=form,dm=current_user.darkmode)

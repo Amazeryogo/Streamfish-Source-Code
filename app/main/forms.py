@@ -11,6 +11,7 @@ class EditProfileForm(FlaskForm):
     username = StringField(_l('Username'), validators=[DataRequired()])
     about_me = TextAreaField(_l('About me'),
                              validators=[Length(min=0, max=140)])
+    email = StringField(_l('Email'),validators=[DataRequired()])
     darkmode = BooleanField(_l('Dark Mode?'))
     hindi = BooleanField(_l('Hindi? (Beta)'))
     submit = SubmitField(_l('Submit'))
@@ -56,6 +57,7 @@ class EditProfileFormHINDI(FlaskForm):
     username = StringField(_l('उपयोगकर्ता नाम'), validators=[DataRequired()])
     about_me = TextAreaField(_l('मेरे बारे मेँ'),
                              validators=[Length(min=0, max=140)])
+    email = StringField(_l('ईमेल'),validators=[DataRequired()])
     darkmode = BooleanField(_l('डार्क मोड?'))
     hindi = BooleanField(_l('हिंदी (बीटा)'))
     submit = SubmitField(_l('प्रस्तुत'))
