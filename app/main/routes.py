@@ -26,9 +26,9 @@ def before_request():
 @login_required
 def index():
     if current_user.hindi != True:
-        form = PostFormHINDI()
-    else:
         form = PostForm()
+    else:
+        form = PostFormHINDI()
     if form.validate_on_submit():
         language = guess_language(form.post.data)
         if language == 'UNKNOWN' or len(language) > 5:

@@ -47,9 +47,9 @@ class SearchForm(FlaskForm):
 
 
 class MessageForm(FlaskForm):
-    message = TextAreaField(_l('संदेश'), validators=[
+    message = TextAreaField(_l('Send A message'), validators=[
         DataRequired(), Length(min=1, max=10000000)])
-    submit = SubmitField(_l('इसे भेजें'))
+    submit = SubmitField(_l('Send'))
 
 
 class EditProfileFormHINDI(FlaskForm):
