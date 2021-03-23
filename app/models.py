@@ -203,6 +203,9 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
             'follower_count': self.followers.count(),
             'followed_count': self.followed.count(),
             'verified?':self.verified,
+            'staff':self.Staff,
+            'darkmode': self.darkmode,
+            'hindi':self.hindi,
             '_links': {
                 'self': url_for('api.get_user', id=self.id),
                 'followers': url_for('api.get_followers', id=self.id),
