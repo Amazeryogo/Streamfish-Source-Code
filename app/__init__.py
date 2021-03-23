@@ -14,6 +14,7 @@ from redis import Redis
 import rq
 from config import Config
 from flask_googletrans import translator
+from flask_mobility import Mobility
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -30,6 +31,7 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
     ts = translator(app)
+    Mobility(app)
     db.init_app(app)
     migrate.init_app(app, db)
     login.init_app(app)
