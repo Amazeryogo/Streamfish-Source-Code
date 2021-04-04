@@ -18,8 +18,7 @@
             <td width="256px"><img src="{{ user.avatar(256) }}"></td>
             <td>
                 {% if verified == True %} 
-                <h1>{{ user.username }}</h1><image width="40%" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image>
-                {% endif %}
+                    <h1>{{ user.username }}</h1><image width="40%" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image>}
                 {% else %}
                 <h1>{{ user.username }}</h1>
                 {% endif %}
