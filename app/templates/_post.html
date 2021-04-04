@@ -9,10 +9,7 @@
                 {% set user_link %}
                     <span class="user_popup">
                         <a href="{{ url_for('main.user', username=post.author.username) }}">
-                            {% if verified == True %}
-                                <h3>{{ post.author.username }} <image width="40" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image></h3>
-                            {% else %}
-                                <h3>{{ post.author.username }}</h3>
+                            {{ post.author.username }}
                         </a>
                     </span>
                 {% endset %}
