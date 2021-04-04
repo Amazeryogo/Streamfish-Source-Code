@@ -136,10 +136,10 @@ def edit_profile():
         form.email.data = current_user.email
     if current_user.hindi != True:
         return render_template('edit_profile.html', title=_('Edit Profile'),
-                            form=form,dm=current_user.darkmode)
+                            form=form,dm=current_user.darkmode,verified=current_user.verified)
     else:
         return render_template('Hindi/edit_profile.html', title=_('Edit Profile'),
-                            form=form,dm=current_user.darkmode)
+                            form=form,dm=current_user.darkmode,verified=current_user.verified)
 
 @bp.route('/follow/<username>', methods=['POST'])
 @login_required
