@@ -68,11 +68,11 @@ def explore():
     if current_user.hindi != True:
         return render_template('index.html', title=_('Explore') ,
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode)
+                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified)
     else:
         return render_template('Hindi/index.html',title=_('Explore'),
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode)
+                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified)
 
 
 @bp.route('/user/<username>')
