@@ -22,7 +22,7 @@ def before_request():
 
 
 @bp.route('/', methods=['GET', 'POST'])
-@bp.route('/index', methods=['GET', 'POST'])
+@bp.route('/index')
 @login_required
 def index():
     page = request.args.get('page', 1, type=int)
@@ -41,7 +41,7 @@ def index():
                             posts=posts.items, next_url=next_url,
                             prev_url=prev_url,dm=current_user.darkmode)
 
-@bp.route('/explore')
+@bp.route('/explore', methods=['GET', 'POST'])
 @login_required
 def explore():
     if current_user.hindi != True:
