@@ -25,6 +25,25 @@ def before_request():
 @bp.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.followed_posts().paginate(
+        page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.index', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('main.index', page=posts.prev_num) \
+        if posts.has_prev else None
+    if current_user.hindi != True:
+        return render_template('index.html', title=_('Home'),
+                            posts=posts.items, next_url=next_url,
+                            prev_url=prev_url,dm=current_user.darkmode)
+    else:
+        return render_template('Hindi/index.html', title=_('घर'),
+                            posts=posts.items, next_url=next_url,
+                            prev_url=prev_url,dm=current_user.darkmode)
+
+@bp.route('/explore')
+@login_required
+def explore():
     if current_user.hindi != True:
         form = PostForm()
     else:
@@ -38,26 +57,7 @@ def index():
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('main.index'))
-    page = request.args.get('page', 1, type=int)
-    posts = current_user.followed_posts().paginate(
-        page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.index', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('main.index', page=posts.prev_num) \
-        if posts.has_prev else None
-    if current_user.hindi != True:
-        return render_template('index.html', title=_('Home'), form=form,
-                            posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode)
-    else:
-        return render_template('Hindi/index.html', title=_('घर'), form=form,
-                            posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode)
-
-@bp.route('/explore')
-@login_required
-def explore():
+        return redirect(url_for('main.explore'))
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
@@ -68,11 +68,11 @@ def explore():
     if current_user.hindi != True:
         return render_template('index.html', title=_('Explore') ,
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified)
+                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified,form=form)
     else:
         return render_template('Hindi/index.html',title=_('Explore'),
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified)
+                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified,form=form)
 
 
 @bp.route('/user/<username>')
