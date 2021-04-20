@@ -13,7 +13,8 @@
 {% else %}
     <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
 {% endif %}
-    <table class="table table-hover"style="margin-left: auto;margin-right: auto;border-radius: 15px;background: lightblue;padding: 20px;width: 700px;height: 90px;">
+{if dm == True %}
+    <table class="table table-hover"style="margin-left: auto;margin-right: auto;border-radius: 15px;background: black;padding: 20px;width: 700px;height: 90px;">
         <tr>
             <td width="256px"><img src="{{ user.avatar(256) }}"></td>
             <td>
@@ -54,6 +55,49 @@
             </td>
         </tr>
     </table>
+{% else %}
+    <table class="table table-hover"style="margin-left: auto;margin-right: auto;border-radius: 15px;background: white;padding: 20px;width: 700px;height: 90px;">
+        <tr>
+            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
+            <td>
+                {% if verified == True %}
+                    <h1>{{ user.username }}<image width="40" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image></h1>
+                {% else %}
+                <h1>{{ user.username }}</h1>
+                {% endif %}
+                {% if user.about_me %}<h4>{{ user.about_me }}</h4>{% endif %}
+                {% if user.last_seen %}
+                <h4>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</h4>
+                {% endif %}
+                <h4>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _( '%(count)d following', count=user.followed.count()) }}</h4>
+                {% if staff == True %}
+                <h3 style ="color:aqua;">Staff Member</h3>
+                {% endif %}
+                {% if user == current_user %}
+                <button type="button"><h4><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h4></button>
+                {% if not current_user.get_task_in_progress('export_posts') %}
+                <h4></h4>
+                {% endif %}
+                {% elif not current_user.is_following(user) %}
+                <p>
+                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Follow'), class_='btn btn-default') }}
+                    </form>
+                {% else %}
+                <p>
+                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Unfollow'), class_='btn btn-default') }}
+                    </form>
+                {% endif %}
+                {% if user != current_user %}
+                <!--<p><a href="{{ url_for('main.send_message', recipient=user.username) }}">{{ _('Send private message') }}</a></p>-->
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endif %}
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
