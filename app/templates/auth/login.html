@@ -2,18 +2,17 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<link href="{{url_for('static', filename='login.css') }}" rel="stylesheet">
 <h1 style="text-align:center;">{{ _('Welcome Back to Streamfish!') }}</h1>
 <div class="row">
-<div class="col-md-4 col-lg-offset-4"></div>
+<div class="col-md-4 col-lg-offset-4">
     {{ wtf.quick_form(form) }}
 </div>
 </div>
 <br>
-<p>{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Join Streamfish Now!') }}</a></p>
-<p>
+<p style="text-align: center;">{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Join Streamfish Now!') }}</a></p>
+<p style="text-align: center;">
     {{ _('Forgot Your Password?') }}
     <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Lets get you a new one!') }}</a>
 </p>
 {% endblock %}
-
+©
