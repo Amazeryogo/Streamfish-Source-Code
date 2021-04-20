@@ -13,6 +13,7 @@
             {{ wtf.quick_form(form) }}
         </div>
     </div>
+    <li><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
     {% if verified == True %}
     <h1></h1>
     {% else %}
