@@ -2,8 +2,9 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<link href="{{url_for('static', filename='login.css') }}" rel="stylesheet">
-<h1 style="text-align: center;">{{ _('Registration') }}</h1>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+<h1 style="text-align: center;font-family: 'Rubik', sans-serif;">{{ _('Registration') }}</h1>
 <div class="row">
     <div class="col-md-4 col-lg-offset-4">
         {{ wtf.quick_form(form) }}
