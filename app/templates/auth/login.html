@@ -2,9 +2,10 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+<link href="{{url_for('static', filename='login.css') }}" rel="stylesheet">
 <h1 style="text-align:center;">{{ _('Welcome Back to Streamfish!') }}</h1>
 <div class="row">
-<div class="col-md-4 col-lg-offset-4" style="margin-left: auto;margin-right: auto;border-radius: 15px;background: lightblue;padding: 20px;width: 310px;height: 50px;"></div>>
+<div class="col-md-4 col-lg-offset-4" id="loginform"></div>>
     {{ wtf.quick_form(form) }}
 </div>
 </div>
