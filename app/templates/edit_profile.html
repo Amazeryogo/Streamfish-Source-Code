@@ -7,13 +7,13 @@
 {% else %}
     <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
 {% endif %}
-    <h1 style="text-align: center;">{{ _('Change your profile') }}</h1>
+    <h1 style="text-align: center;">{{ _('Lets change your profile!') }}</h1>
     <div class="row">
         <div class="col-md-4 col-lg-offset-4">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
-    <button class="button"><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></button>
+    <a href="{{ url_for('auth.logout') }}"><button class="button">{{ _('Logout') }}</button></a>
     {% if verified == True %}
     <h1></h1>
     {% else %}
