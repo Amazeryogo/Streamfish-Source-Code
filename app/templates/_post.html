@@ -13,8 +13,9 @@
                         </a>
                     </span>
                 {% endset %}
-                {{ _('%(username)s said %(when)s',
-                    username=user_link, when=moment(post.timestamp).fromNow()) }}
+                {% if post.author.verified == True %}
+                    {{ _('%(username)s said %(when)s',
+                        username=user_link, when=moment(post.timestamp).fromNow()) }} <image width="40" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image>
                 <br>
                 <span id="post{{ post.id }}" style="color: black;">{{ post.body }}</span>
                 {% if post.language and post.language != g.locale %}

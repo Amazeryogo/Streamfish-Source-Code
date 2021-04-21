@@ -5,7 +5,7 @@
             {% if user.verified == True %}
                 <p><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}<image width="40" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image></a></p>
             {% else %}
-                <p><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}</a></p>\
+                <p><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}</a></p>
             {% endif %}
             <small>
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
