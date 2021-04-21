@@ -14,8 +14,8 @@
                     </span>
                 {% endset %}
                 {% if post.author.verified == True %}
-                    {{ _('%(username)s said %(when)s',
-                        username=user_link, when=moment(post.timestamp).fromNow()) }} <image width="40" height="40" src="{{url_for('static',filename = 'download.png')}}" ></image>
+                <p>   {{ _('%(username)s said %(when)s',
+                        username=user_link, when=moment(post.timestamp).fromNow()) }} <image width="20" height="20" src="{{url_for('static',filename = 'download.png')}}" ></image></p> 
                 {% else %}
                     {{ _('%(username)s said %(when)s',
                         username=user_link, when=moment(post.timestamp).fromNow()) }}
