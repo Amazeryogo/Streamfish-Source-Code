@@ -20,6 +20,7 @@
                     {{ _('%(username)s said %(when)s',
                         username=user_link, when=moment(post.timestamp).fromNow()) }}
                 {% endif %}
+                <br/>
                 <span id="post{{ post.id }}" style="color: black;">{{ post.body }}</span>
             </td>
         </tr>
