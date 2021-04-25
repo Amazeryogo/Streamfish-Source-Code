@@ -273,11 +273,11 @@ class Message(db.Model):
 
 class LP(db.Model):
     __searchable__ = ['title']
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200))
-    body = db.Column(db.String(5000))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    lpid = db.Column(db.Integer, primary_key=True)
+    lptitle = db.Column(db.String(200))
+    lpbody = db.Column(db.String(5000))
+    lptimestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    lpuser_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return '<LP {}>'.format(self.title)
