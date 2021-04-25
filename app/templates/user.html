@@ -34,7 +34,7 @@
                 {% if user == current_user %}
                 <button type="button"><h4><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></h4></button>
                 {% if not current_user.get_task_in_progress('export_posts') %}
-                <h4></h4>
+                <h3><a href="{{ url_for('main.export_posts') }}">{{ _('Export your posts') }}</a></h3>
                 {% endif %}
                 {% elif not current_user.is_following(user) %}
                 <p>
