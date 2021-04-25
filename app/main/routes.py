@@ -45,7 +45,7 @@ def index():
 @bp.route('/post/longpost',methods=['GET', 'POST'])
 @login_required
 def yu():
-    form = longboy()
+    form = Longboy()
     if form.validate_on_submit():
         title = form.title.data
         body = form.body.data
