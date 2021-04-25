@@ -14,12 +14,12 @@
                 </a>
             </span>
         {% endset %}
-            {% if post.author.verified == True %}
+            {% if lp.author.verified == True %}
             <p>   {{ _('%(username)s said %(when)s',
-                        username=user_link, when=moment(post.timestamp).fromNow()) }} <image width="20" height="20" src="{{url_for('static',filename = 'download.png')}}" ></image></p> 
+                        username=user_link, when=moment(lp.timestamp).fromNow()) }} <image width="20" height="20" src="{{url_for('static',filename = 'download.png')}}" ></image></p> 
             {% else %}
                 {{ _('%(username)s said %(when)s',
-                    username=user_link, when=moment(post.timestamp).fromNow()) }}
+                    username=user_link, when=moment(lp.timestamp).fromNow()) }}
             {% endif %}
             <br/>
             <span><h2>{{ lp.lptitle }}</h2></span>
