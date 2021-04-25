@@ -6,8 +6,9 @@ from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
 from app.main.forms import EditProfileForm, EmptyForm, PostForm, SearchForm, \
-    MessageForm, EditProfileFormHINDI,EmptyFormHINDI,PostFormHINDI,SearchFormHINDI,MessageFormHINDI
-from app.models import User, Post, Message, Notification
+    MessageForm, EditProfileFormHINDI,EmptyFormHINDI,PostFormHINDI,SearchFormHINDI,MessageFormHINDI, \
+    longboy
+from app.models import LP, User, Post, Message, Notification
 from app.translate import translate
 from app.main import bp
 
@@ -40,6 +41,20 @@ def index():
         return render_template('Hindi/index.html', title=_('घर'),
                             posts=posts.items, next_url=next_url,
                             prev_url=prev_url,dm=current_user.darkmode)
+
+@bp.route('/post/longpost',methods=['GET', 'POST'])
+@login_required
+def yu():
+    form = longboy()
+    if form.validate_on_submit():
+        title = form.title.data
+        body = form.body.data
+        k = LP(lptitle=title,lpbody=body,author=current_user)
+        db.session.add(k)
+        db.session.commit()
+        flash(_('Your long post is now live!'))
+        return redirect(url_for('main.explore'))
+    return render_template('makelp.html',form=form)
 
 @bp.route('/explore', methods=['GET', 'POST'])
 @login_required

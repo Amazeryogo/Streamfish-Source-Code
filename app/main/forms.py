@@ -99,9 +99,9 @@ class MessageFormHINDI(FlaskForm):
     submit = SubmitField(_l('भेज देना'))
 
 
-class LP(FlaskForm):
+class Longboy(FlaskForm):
     title = StringField(_l('Title'),validators=[
         DataRequired(), Length(min=5, max=200)])
     body = TextAreaField(_l('Body'),validators=[
         DataRequired(), Length(min=5, max=5000)])
-    submit = SubmitField(_l('Post it!'))
+    submit = SubmitField(_l('Post it!'))    

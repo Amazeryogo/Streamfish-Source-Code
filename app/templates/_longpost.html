@@ -16,10 +16,10 @@
             {% endset %}
             {{ _('%(username)s',
             username=user_link) }}
-            {{ _('%(when)s', when=moment(LP.timestamp).fromNow()) }}
+            {{ _('%(when)s', when=moment(LP.lptimestamp).fromNow()) }}
             <br>
-            <span><h2>{{ LP.title }}</h2></span>
-            <span id="LP{{ LP.id }}">{{ LP.body }}</span>
+            <span><h2>{{ LP.lptitle }}</h2></span>
+            <span id="LP{{ LP.lpid }}">{{ LP.lpbody }}</span>
         </td>
     </tr>
 </table>
