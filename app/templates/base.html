@@ -4,6 +4,8 @@
     {% if title %}{{ title }} - Streamfish{% else %}{{ _('Streamfish') }}{% endif %}
 {% endblock %}
 {% block navbar %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
     <nav class="navbar nav  bar-default margin: 0;">
         <div class="container">
             <div class="navbar-header">
@@ -13,12 +15,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Streamfish</a>
+                <a style="font-family: 'Rubik', sans-serif;">class="navbar-brand" href="{{ url_for('main.explore') }}">Streamfish</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
-                    <li><a href="{{ url_for('main.explore') }}">{{ _('Live Chat') }}</a></li>
+                    <li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
+                    <li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('main.explore') }}">{{ _('Live Chat') }}</a></li>
                 </ul>
                 {% if g.search_form %}
                 <!--<form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
@@ -29,9 +31,9 @@
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('auth.login') }}">{{ _('Streamfish') }}</a></li>
+                    <li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('auth.login') }}">{{ _('Streamfish') }}</a></li>
                     {% else %}
-                    <li>
+                    <li style="font-family: 'Rubik', sans-serif;">
                         <!--<a href="{{ url_for('main.messages') }}">{{ _('Private Messages') }}-->
                             {% set new_messages = current_user.new_messages() %}
                             <span id="message_count" class="badge"
@@ -46,8 +48,8 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
-                    <li><a href="{{ url_for('main.discord') }}">{{ _('Discord!') }}</a></li>
+                    <li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+                    <li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('main.discord') }}">{{ _('Discord!') }}</a></li>
                     {% endif %}
                 </ul>
             </div>
