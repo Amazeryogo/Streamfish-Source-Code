@@ -1,5 +1,5 @@
 <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
-<table class="table table-hover">
+<table class="table" style="margin-left: auto;margin-right: auto;border-radius: 15px;background: lightblue;padding: 20px;width: 600px;height: 200px;">
     <tr>
         <td width="70px">
             <a href="{{ url_for('main.user', username=LP.author.username) }}">
@@ -13,11 +13,15 @@
                     {{ LP.author.username }}
                 </a>
             </span>
-            {% endset %}
-            {{ _('%(username)s',
-            username=user_link) }}
-            {{ _('%(when)s', when=moment(LP.lptimestamp).fromNow()) }}
-            <br>
+        {% endset %}
+            {% if post.author.verified == True %}
+            <p>   {{ _('%(username)s said %(when)s',
+                        username=user_link, when=moment(post.timestamp).fromNow()) }} <image width="20" height="20" src="{{url_for('static',filename = 'download.png')}}" ></image></p> 
+            {% else %}
+                {{ _('%(username)s said %(when)s',
+                    username=user_link, when=moment(post.timestamp).fromNow()) }}
+            {% endif %}
+            <br/>
             <span><h2>{{ LP.lptitle }}</h2></span>
             <span id="LP{{ LP.lpid }}">{{ LP.lpbody }}</span>
         </td>
