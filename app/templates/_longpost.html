@@ -21,7 +21,6 @@
                 {{ _('%(username)s said %(when)s',
                     username=user_link, when=moment(lp.lplptimestamp).fromNow()) }}
             {% endif %}
-            <br/>
             <span><h2>{{ lp.lptitle }}</h2></span>
             <span id="lp{{ lp.lpid }}">{{ lp.lpbody }}</span>
         </td>
