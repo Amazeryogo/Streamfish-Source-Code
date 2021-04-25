@@ -2,15 +2,15 @@
 <table class="table" style="margin-left: auto;margin-right: auto;border-radius: 15px;background: lightblue;padding: 20px;width: 600px;height: 200px;">
     <tr>
         <td width="70px">
-            <a href="{{ url_for('main.user', username=LP.author.username) }}">
-                <img src="{{ LP.author.avatar(70) }}" />
+            <a href="{{ url_for('main.user', username=lp.author.username) }}">
+                <img src="{{ lp.author.avatar(70) }}" />
             </a>
         </td>
         <td>
             {% set user_link %}
             <span class="user_popup">
-                <a href="{{ url_for('main.user', username=LP.author.username) }}">
-                    {{ LP.author.username }}
+                <a href="{{ url_for('main.user', username=lp.author.username) }}">
+                    {{ lp.author.username }}
                 </a>
             </span>
         {% endset %}
@@ -22,8 +22,8 @@
                     username=user_link, when=moment(post.timestamp).fromNow()) }}
             {% endif %}
             <br/>
-            <span><h2>{{ LP.lptitle }}</h2></span>
-            <span id="LP{{ LP.lpid }}">{{ LP.lpbody }}</span>
+            <span><h2>{{ lp.lptitle }}</h2></span>
+            <span id="lp{{ lp.lpid }}">{{ lp.lpbody }}</span>
         </td>
     </tr>
 </table>
