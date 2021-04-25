@@ -66,7 +66,7 @@ def explorelp():
     prev_url = url_for('main.explorelp', page=posts.prev_num) \
         if posts.has_prev else None  
     return render_template('explore_lp.html', title=_('Longposts'),
-                            posts=posts.items, next_url=next_url,
+                            lps=posts.items, next_url=next_url,
                             prev_url=prev_url,dm=current_user.darkmode)
 
 
