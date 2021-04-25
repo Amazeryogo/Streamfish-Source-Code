@@ -59,7 +59,7 @@ def yu():
 @bp.route('/lp')
 def explorelp():
     page = request.args.get('page', 1, type=int)
-    posts = LP.query.order_by(LP.timestamp.desc()).paginate(
+    posts = LP.query.order_by(LP.lptimestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('main.explorelp', page=posts.next_num) \
         if posts.has_next else None
