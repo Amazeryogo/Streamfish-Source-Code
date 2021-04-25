@@ -26,7 +26,11 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.index')
         return redirect(next_page)
-    return render_template('auth/login.html', title=_('Sign In'), form=form,ip=request.environ.get('HTTP_X_REAL_IP', request.remote_addr))
+    if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+        x = request.environ['REMOTE_ADDR']
+    else:
+        x = request.environ['HTTP_X_FORWARDED_FOR']
+    return render_template('auth/login.html', title=_('Sign In'), form=form,ip=x)
 
 
 @bp.route('/logout')

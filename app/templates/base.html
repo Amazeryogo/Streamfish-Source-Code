@@ -33,7 +33,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
                     <!--<li style="font-family: 'Rubik', sans-serif;"><a href="{{ url_for('auth.login') }}">{{ _('Streamfish') }}</a></li>-->
-                    <li style="font-family: 'Rubik', sans-serif">{{ip}}</li>
+                    <li style="font-family: 'Rubik', sans-serif">Your IP: {{ip}}</li>
                     {% else %}
                     <li style="font-family: 'Rubik', sans-serif;">
                         <!--<a href="{{ url_for('main.messages') }}">{{ _('Private Messages') }}-->
