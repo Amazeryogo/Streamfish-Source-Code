@@ -7,7 +7,7 @@ from guess_language import guess_language
 from app import db
 from app.main.forms import EditProfileForm, EmptyForm, PostForm, SearchForm, \
     MessageForm, EditProfileFormHINDI,EmptyFormHINDI,PostFormHINDI,SearchFormHINDI,MessageFormHINDI, \
-    longboy
+    Longboy
 from app.models import LP, User, Post, Message, Notification
 from app.translate import translate
 from app.main import bp
