@@ -97,3 +97,11 @@ class MessageFormHINDI(FlaskForm):
     message = TextAreaField(_l('संदेश'), validators=[
         DataRequired(), Length(min=1, max=10000000)])
     submit = SubmitField(_l('भेज देना'))
+
+
+class LP(FlaskForm):
+    title = StringField(_l('Title'),validators=[
+        DataRequired(), Length(min=5, max=200)])
+    body = TextAreaField(_l('Body'),validators=[
+        DataRequired(), Length(min=5, max=5000)])
+    submit = SubmitField(_l('Post it!'))
