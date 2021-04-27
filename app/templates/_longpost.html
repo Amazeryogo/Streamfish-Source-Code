@@ -18,7 +18,7 @@
             <p>   {{ _('%(username)s posted %(when)s',
                         username=user_link, when=moment(lp.lptimestamp).fromNow()) }} <image width="20" height="20" src="{{url_for('static',filename = 'download.png')}}" ></image></p> 
             {% else %}
-                {{ _('%(username)s said %(when)s',
+                {{ _('%(username)s posted %(when)s',
                     username=user_link, when=moment(lp.lptimestamp).fromNow()) }}
             {% endif %}
             <span><h2>{{ lp.lptitle }}</h2></span>
