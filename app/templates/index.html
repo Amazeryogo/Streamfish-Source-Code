@@ -7,7 +7,7 @@
     <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
 {% endif %}
 {% if index == True %}
-    <h1 style="text-align: center;">{{ _('Personal feed of %(username)s', username = current_user.username) }}</h1>
+    <h1 style="text-align: center;">{{ _('Personal feed for %(username)s', username = current_user.username) }}</h1>
 {% else %}
     <h1 style="text-align: center;">{{ _('Hey %(username)s, What are your plans?', username = current_user.username) }}</h1>
 {% endif %}    
