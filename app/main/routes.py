@@ -36,7 +36,7 @@ def index():
     if current_user.hindi != True:
         return render_template('index.html', title=_('Home'),
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode)
+                            prev_url=prev_url,dm=current_user.darkmode,index=True)
     else:
         return render_template('Hindi/index.html', title=_('घर'),
                             posts=posts.items, next_url=next_url,
@@ -97,7 +97,7 @@ def explore():
     if current_user.hindi != True:
         return render_template('index.html', title=_('Explore') ,
                             posts=posts.items, next_url=next_url,
-                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified,form=form)
+                            prev_url=prev_url,dm=current_user.darkmode,verified=current_user.verified,form=form,index=False)
     else:
         return render_template('Hindi/index.html',title=_('Explore'),
                             posts=posts.items, next_url=next_url,
