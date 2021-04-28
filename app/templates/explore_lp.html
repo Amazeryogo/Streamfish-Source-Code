@@ -6,7 +6,7 @@
     {% else %}
         <link href="{{url_for('static', filename='main.css') }}" rel="stylesheet">
     {% endif %}
-    <h3><a href="{{url_for('main.yu')" style="text-align:center">Post a long post of your own!</a></h3>        
+    <h3><a href="{{url_for('main.yu') }}" style="text-align:center">Post a long post of your own!</a></h3>        
     {% for lp in lps %}
         {% include '_longpost.html' %}
     {% endfor %}
